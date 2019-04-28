@@ -12,7 +12,7 @@ const image = require("./controllers/image");
 const db = knex({
   client: 'pg',
   connection: {
-    host: '127.0.0.1',
+    host: 'postgresql-angular-46051',
     user: 'timcarew',
     password: '',
     database: 'braindb'
@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.status(200).json("it is working");
+  res.status(200);
 });
 
 app.post("/signin", (req, res) => {signin.handleSignin(req, res, db, bcrypt)});
